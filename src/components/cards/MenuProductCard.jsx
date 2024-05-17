@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Minus from "../../assets/icons/Minus.png";
 import Plus from "../../assets/icons/Plus.png";
+import { BASE_URL } from "../../api/constants";
 export default function MenuProductCard({ product }) {
   const [quantity, setQuantity] = useState(0);
   const increment = () => {
@@ -19,9 +20,9 @@ export default function MenuProductCard({ product }) {
         </div>
       )}
       <img
-        src={product.image}
+        src={`${BASE_URL}${product.image}`}
         alt={product.name}
-        className="size-[90px] object-cover"
+        className="size-[90px] object-cover rounded-[10px]"
       />
       <div className="space-y-[2px]">
         <h5 className="text-[#000000] font-normal">{product.name}</h5>
